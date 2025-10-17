@@ -1,0 +1,144 @@
+* {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+.animation-in {
+    animation: slide-in 0.3s forwards;
+  }
+
+.animation-out {
+    animation: slide-out 0.3s forwards;
+}
+
+    @keyframes slide-in {
+        from {
+        opacity: 0;
+        transform: translateY(-20px);
+        }
+        to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+
+    @keyframes slide-out {
+        from {
+        opacity: 1;
+        transform: translateY(0);
+        }
+        to {
+        opacity: 0;
+        transform: translateY(-20px);
+        }
+    }
+
+body {
+  padding: 20px;
+  min-width: 100%;
+background-color: rgba(59, 96, 86, 0.475);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+nav .logo {
+  background-color: blue;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+}
+
+nav .links {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+nav ol {
+
+    animation: slide-in 0.3s forwards;
+  display: flex;
+  list-style: none;
+  background: #e09191;
+}
+
+nav ol li {
+  cursor: pointer;
+  padding: 15px 15px;
+}   
+
+nav ol li:hover {
+  color: white;
+  font-weight: bold;
+}
+
+nav ol li.select-link {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-bottom: solid 2px rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.callToActionBtn {
+  border: none;
+  border-radius: 5px;
+  padding:7.5px 15px;
+  background-color: red;
+  font-weight: bold;
+  color: white;
+}
+
+#menuBtn {
+    display: none;
+  }
+
+@media screen and (max-width: 480px) {
+    
+    body {
+        min-width: fit-content;
+        padding: 15px;
+        background-color: rgba(57, 14, 14, 0.427);
+    }
+
+    .links-list {
+    display: none;
+  }
+
+
+  .links-list.active {
+    display: flex;
+    flex-direction: row;
+    position : absolute;
+    top: 65px;
+    right: 15px;
+    background-color: rgba(255, 255, 255, 0.214);
+    
+  }
+
+
+  #menuBtn {
+    animation: slide-in 0.3s forwards;
+    display: flex;
+    border: none;
+    border-radius: 5px;
+    padding:7.5px 15px;
+    background-color: black;
+    font-weight: bold;
+    color: white;
+  }
+
+  nav .links {
+    gap: 15px;
+  }
+
+}
